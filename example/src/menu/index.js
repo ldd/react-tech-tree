@@ -26,8 +26,8 @@ export const MyMobileMenu = ({ clickHandler, labels = [] }) => {
       </DropdownTrigger>
       <DropdownMenu>
         <DropdownContent>
-          {labels.map(label => (
-            <DropdownItem key={label} onClick={() => clickHandler(label)}>
+          {labels.map(({ label, key }) => (
+            <DropdownItem key={key} onClick={() => clickHandler(key)}>
               {label}
             </DropdownItem>
           ))}
@@ -41,9 +41,9 @@ export const MenuEntry = ({ clickHandler, label, entries = [] }) => (
   <>
     <MenuLabel>{label}</MenuLabel>
     <MenuList>
-      {entries.map(entry => (
-        <li key={entry}>
-          <MenuLink onClick={() => clickHandler(entry)}>{entry}</MenuLink>
+      {entries.map(({ label: entryLabel, key }) => (
+        <li key={key}>
+          <MenuLink onClick={() => clickHandler(key)}>{entryLabel}</MenuLink>
         </li>
       ))}
     </MenuList>

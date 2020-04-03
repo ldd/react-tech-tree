@@ -19,7 +19,10 @@ const ExampleContent = ({ pick }) => (
 
 export const Examples = () => {
   const [pick, setPick] = useState("superhero");
-  const choices = ["effects", "superhero"];
+  const choices = [
+    { label: "Pixelated Effects", key: "effects" },
+    { label: "X-Men", key: "superhero" }
+  ];
   return (
     <Columns
       style={{
