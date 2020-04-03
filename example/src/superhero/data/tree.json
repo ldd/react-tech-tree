@@ -1,0 +1,72 @@
+{
+  "nodes": [
+    [
+      { "name": "empty" },
+      { "name": "magneto", "id": "magneto" },
+      { "name": "empty" },
+      { "name": "juggernaut", "id": "juggernaut" },
+      { "name": "professor_x", "id": "professor_x" },
+      { "name": "cassandra_nova", "id": "cassandra_nova" },
+      { "name": "empty" },
+      { "name": "empty" }
+    ],
+    [
+      { "name": "scarlet_witch", "id": "scarlet_witch" },
+      { "name": "quicksilver", "id": "quicksilver" },
+      { "name": "polaris", "id": "polaris" },
+      { "name": "xorn", "id": "xorn" },
+      { "name": "gabrielle_haller", "id": "gabrielle_haller" },
+      { "name": "moira_mactaggert", "id": "moira_mactaggert" },
+      { "name": "lilandra", "id": "lilandra" },
+      { "name": "deathbird", "id": "deathbird" },
+      { "name": "d_ken", "id": "d_ken" }
+    ],
+    [
+      { "name": "empty" },
+      { "name": "rogue", "id": "rogue" },
+      { "name": "gambit", "id": "gambit" },
+      { "name": "iceman", "id": "iceman" },
+      { "name": "empty" },
+      { "name": "empty" },
+      { "name": "legion", "id": "legion" },
+      { "name": "corsair", "id": "corsair" },
+      { "name": "empty" },
+      { "name": "deathcry", "id": "deathcry" },
+      { "name": "bishop", "id": "bishop" },
+      { "name": "empty" }
+    ],
+    [
+      { "name": "forge", "id": "forge" },
+      { "name": "storm", "id": "storm" },
+      { "name": "calisto", "id": "calisto" },
+      { "name": "empty" },
+      { "name": "empty" },
+      { "name": "havok", "id": "havok" },
+      { "name": "empty" },
+      { "name": "vulcan", "id": "vulcan" },
+      { "name": "empty" },
+      { "name": "empty" }
+    ]
+  ],
+  "links": [
+    { "from": "magneto", "to": "professor_x", "className": "nemesis" },
+    { "from": "magneto", "to": "scarlet_witch", "className": "offspring" },
+    { "from": "magneto", "to": "quicksilver", "className": "offspring" },
+    { "from": "magneto", "to": "polaris", "className": "offspring" },
+    { "from": "magneto", "to": "xorn", "className": "other" },
+    { "from": "professor_x", "to": "gabrielle_haller", "className": "dating" },
+    { "from": "professor_x", "to": "moira_mactaggert", "className": "dating" },
+    { "from": "professor_x", "to": "lilandra", "className": "married" },
+    { "from": "magneto", "to": "rogue", "className": "dating" },
+    { "from": "rogue", "to": "gambit", "className": "dating" },
+    { "from": "polaris", "to": "iceman", "className": "dating" },
+    { "from": "deathbird", "to": "deathcry", "className": "offspring" },
+    { "from": "deathbird", "to": "bishop", "className": "dating" },
+    { "from": "forge", "to": "storm", "className": "dating" },
+    { "from": "storm", "to": "calisto", "className": "other" },
+    { "from": "corsair", "to": "havok", "className": "offspring" },
+    { "from": "corsair", "to": "vulcan", "className": "offspring" },
+    { "from": "polaris", "to": "havok", "className": "dating" },
+    { "from": "deathbird", "to": "vulcan", "className": "dating" }
+  ]
+}

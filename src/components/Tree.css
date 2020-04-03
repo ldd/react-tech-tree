@@ -1,0 +1,40 @@
+.Tree {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: column;
+  height: 400px;
+}
+
+@keyframes activate {
+  from {
+    border-color: gray;
+    stroke: gray;
+  }
+  to {
+    border-color: gold;
+    stroke: gold;
+  }
+}
+.Tree .active {
+  animation: 1.5s forwards activate;
+}
+
+.Tree-Links {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+}
+.Tree-Links > path {
+  fill: none;
+  stroke: gray;
+  stroke-width: 6px;
+}
+
+.Tree-Row {
+  display: flex;
+  justify-content: space-evenly;
+  height: 64px;
+}

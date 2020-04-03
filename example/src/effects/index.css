@@ -1,0 +1,14 @@
+#effects-tree.Tree {
+  background-color: transparent;
+}
+#effects-tree.Tree .Node {
+  border: solid;
+  border-width: 1px;
+  background-color: white;
+}
+
+#effects-tree.Tree .Sprite {
+  image-rendering: pixelated;
+  background-repeat: no-repeat;
+  transform-origin: top left;
+}
