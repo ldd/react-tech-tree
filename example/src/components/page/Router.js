@@ -1,6 +1,7 @@
 import { NavbarItem } from "bloomer";
 import React, { useState } from "react";
 import { Examples } from "./Examples";
+import { Landing } from "./Landing";
 
 export const RouterPicker = ({ routes = [], activeRoute, clickHandler }) =>
   routes.map(({ label, route }) => (
@@ -17,7 +18,7 @@ export const RouterPicker = ({ routes = [], activeRoute, clickHandler }) =>
 const Empty = () => <></>;
 
 export const RouterPick = ({ activeRoute }) => {
-  let InnerContent = Empty;
+  let InnerContent = Landing;
   if (activeRoute === "#examples") InnerContent = Examples;
   return <InnerContent />;
 };
