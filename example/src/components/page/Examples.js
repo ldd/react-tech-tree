@@ -9,7 +9,7 @@ const ExampleContent = ({ pick }) => (
     {pick === "superhero" ? <SuperheroTree /> : <EffectsTree />}
     <Button
       style={{ marginTop: "1.5rem" }}
-      href={`https://github.com/ldd/react-tech-tree/blob/master/example/src/${pick}/index.js`}
+      href={`https://github.com/ldd/react-tech-tree/blob/master/example/src/trees/${pick}/index.js`}
       target="_blank"
     >
       Show Code

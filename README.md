@@ -19,7 +19,7 @@ Create highly customizable tech trees (or generic graphical trees) from json fil
 - Customizable
   - style links and nodes
   - ready to use with [react-tooltip](https://github.com/wwayne/react-tooltip), etc
-  - [good examples](https://github.com/ldd/react-tech-tree/tree/master/example/src)
+  - [good examples](https://github.com/ldd/react-tech-tree/tree/master/example/src/trees)
 
 ## Installation
 
@@ -85,7 +85,7 @@ import { Sprite } from "react-tech-tree";
 
 ## Tips
 
-For further usage, go to the [examples page](https://github.com/ldd/react-tech-tree/tree/master/example/src)
+For further usage, go to the [examples page](https://github.com/ldd/react-tech-tree/tree/master/example/src/trees)
 
 ## License
 
