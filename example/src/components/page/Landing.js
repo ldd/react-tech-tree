@@ -7,8 +7,8 @@ const GIF_BASE = `${process.env.PUBLIC_URL}/gifs/`;
 
 const TextColumn = ({ title, subtitle }) => (
   <Column>
-    <Title isSize={3}>Interactive</Title>
-    <Subtitle isSize={4}>Some cute text goes here</Subtitle>
+    <Title isSize={3}>{title}</Title>
+    <Subtitle isSize={4}>{subtitle}</Subtitle>
   </Column>
 );
 
@@ -28,11 +28,11 @@ const InstallationText = () => (
 );
 
 export const Landing = () => (
-  <Container hasTextAlign="centered">
+  <Container hasTextAlign="centered" className="Landing">
     <Title isSize={1}>React Tech Tree</Title>
     <Columns isVCentered hasTextAlign="left">
-      <ImageColumn label="x_men" />
       <TextColumn title="Interactive" subtitle="Some text" />
+      <ImageColumn label="x_men" />
     </Columns>
     <Columns isVCentered hasTextAlign="left">
       <TextColumn title="Customizable" subtitle="Some text" />
