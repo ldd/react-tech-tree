@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from "react";
 import "./Tree.css";
 import { Node } from "./Node";
+import { Link } from "./Link";
 import { getNodeDOMPositions, simplePathMaker } from "../helpers/svgHelper";
 
 export const Tree = ({
@@ -8,6 +9,7 @@ export const Tree = ({
   links = [],
   nodes = [],
   NodeElement = Node,
+  LinkElement = Link,
   nodeProps = {},
   linkProps = {}
 }) => {
@@ -31,8 +33,9 @@ export const Tree = ({
       <svg className="Tree-Links">
         <TreeLink
           links={links}
-          nodePositions={nodePositions}
+          LinkElement={LinkElement}
           linkProps={otherLinkProps}
+          nodePositions={nodePositions}
         />
       </svg>
       <TreeNodes
@@ -44,7 +47,7 @@ export const Tree = ({
   );
 };
 
-const TreeNodes = ({ nodes, NodeElement, nodeProps }) =>
+const TreeNodes = ({ nodes = [], NodeElement = Node, nodeProps = {} }) =>
   nodes.map((siblings, depth) => (
     <div key={depth} className="Tree-Row">
       {siblings.map((props, i) => (
@@ -58,11 +61,17 @@ const TreeNodes = ({ nodes, NodeElement, nodeProps }) =>
     </div>
   ));
 
-const TreeLink = ({ nodePositions = [], links = [], linkProps = {} }) => {
+const TreeLink = ({
+  links = [],
+  LinkElement = Link,
+  linkProps = {},
+  nodePositions = []
+}) => {
   return links.map(({ from, to, ...props }, i) => {
     const { pathData } = nodePositions[i];
     if (!pathData) return null;
     const id = `${from}-${to}`;
-    return <path d={pathData} id={id} key={id} {...linkProps} {...props} />;
+    const allProps = { ...linkProps, ...props };
+    return <LinkElement id={id} key={id} pathData={pathData} {...allProps} />;
   });
 };
