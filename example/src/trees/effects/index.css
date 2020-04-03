@@ -6,6 +6,9 @@
   border-width: 1px;
   background-color: white;
 }
+#effects-tree.Tree .Node:not(.active) {
+  filter: grayscale(100%);
+}
 
 #effects-tree.Tree .Sprite {
   image-rendering: pixelated;
