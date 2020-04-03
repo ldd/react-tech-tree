@@ -4,8 +4,8 @@ import {
   Dropdown, DropdownContent, DropdownItem, DropdownMenu, DropdownTrigger
 } from "bloomer";
 import React, { useState } from "react";
-import EffectsTree from "../effects/EffectsTree";
-import SuperheroTree from "../superhero/SuperheroTree";
+import EffectsTree from "../effects";
+import SuperheroTree from "../superhero";
 
 const MyDropdown = ({ clickHandler, labels = [] }) => {
   const [dropdownStatus, setDropdownStatus] = useState(false);
@@ -60,10 +60,8 @@ const MyMenu = ({ clickHandler, choices = [] }) => (
 );
 
 export const Examples = () => {
-  const [pick, setPick] = useState("superheroe");
-  let pickLocation = "effects/EffectsTree.js";
-  if (pick === "superheroe") pickLocation = "superhero/SuperheroTree.js";
-  const choices = ["effects", "superheroe"];
+  const [pick, setPick] = useState("superhero");
+  const choices = ["effects", "superhero"];
   return (
     <Columns
       style={{
@@ -74,10 +72,10 @@ export const Examples = () => {
     >
       <MyMenu clickHandler={setPick} choices={choices} />
       <Column style={{ maxWidth: "calc(100vw - 1.5rem)", overflowX: "scroll" }}>
-        {pick === "superheroe" ? <SuperheroTree /> : <EffectsTree />}
+        {pick === "superhero" ? <SuperheroTree /> : <EffectsTree />}
         <Button
           style={{ marginTop: "1.5rem" }}
-          href={`https://github.com/ldd/react-tech-tree/blob/master/example/src/${pickLocation}`}
+          href={`https://github.com/ldd/react-tech-tree/blob/master/example/src/${pick}/index.js`}
           target="_blank"
         >
           Show Code

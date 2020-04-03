@@ -3,7 +3,7 @@ import { Tree, prepareSpritesheetStyle } from "react-tech-tree";
 import treeData from "./data/tree.json";
 import spriteInformation from "./data/spritesheet.json";
 import spriteImage from "./data/spritesheet.png";
-import "./SuperheroTree.css";
+import "./index.css";
 import { linkPathMaker as pathMaker } from "./linkHelper";
 
 const { nodes, links } = treeData;
