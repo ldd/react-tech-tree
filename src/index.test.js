@@ -1,7 +1,11 @@
-import { ExampleComponent } from ".";
+import React from "react";
+import ReactDOM from "react-dom";
+import { Tree } from ".";
 
 describe("ExampleComponent", () => {
-  it("is truthy", () => {
-    expect(ExampleComponent).toBeTruthy();
+  it("renders without crashing", () => {
+    const div = document.createElement("div");
+    ReactDOM.render(<Tree />, div);
+    ReactDOM.unmountComponentAtNode(div);
   });
 });
