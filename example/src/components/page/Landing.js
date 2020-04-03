@@ -31,11 +31,14 @@ export const Landing = () => (
   <Container hasTextAlign="centered" className="Landing">
     <Title isSize={1}>React Tech Tree</Title>
     <Columns isVCentered hasTextAlign="left">
-      <TextColumn title="Interactive" subtitle="Some text" />
+      <TextColumn
+        title="Interactive"
+        subtitle="interact with Links and Nodes"
+      />
       <ImageColumn label="x_men" />
     </Columns>
     <Columns isVCentered hasTextAlign="left">
-      <TextColumn title="Customizable" subtitle="Some text" />
+      <TextColumn title="Customizable" subtitle="Customize Links and Nodes" />
       <ImageColumn label="effects" />
     </Columns>
     <InstallationText />
