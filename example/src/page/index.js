@@ -1,21 +1,24 @@
 //prettier-ignore
 import { 
-  Content, Footer,
-  Hero, HeroBody, HeroFooter, HeroHeader,
+  Hero, HeroBody, HeroHeader,
   Navbar, NavbarBrand, NavbarBurger, NavbarItem, NavbarMenu, NavbarStart
 } from "bloomer";
 import "bulma/css/bulma.min.css";
 import React, { useState } from "react";
-import { Examples } from "./Examples";
+import { RouterPicker, Router } from "./Router";
 
-const MyHeader = ({ routes = [], activeRoute, setRoute }) => {
+const MyHeader = ({ setRoute, ...otherProps }) => {
   const [burgerStatus, setBurgerStatus] = useState(false);
+  const clickHandler = route => {
+    setBurgerStatus(false);
+    setRoute(route);
+  };
   return (
     <HeroHeader>
       <Navbar>
         <NavbarBrand>
           <NavbarItem>
-            <b>React Tech Tree</b>
+            <b>React Tech Trees</b>
           </NavbarItem>
           <NavbarBurger
             isActive={burgerStatus}
@@ -24,51 +27,22 @@ const MyHeader = ({ routes = [], activeRoute, setRoute }) => {
         </NavbarBrand>
         <NavbarMenu isActive={burgerStatus}>
           <NavbarStart>
-            {routes.map(({ label, route }) => (
-              <NavbarItem
-                isActive={activeRoute === route}
-                href={route}
-                key={route}
-                onClick={() => setRoute(route)}
-              >
-                {label}
-              </NavbarItem>
-            ))}
+            <RouterPicker {...otherProps} clickHandler={clickHandler} />
           </NavbarStart>
         </NavbarMenu>
       </Navbar>
     </HeroHeader>
   );
 };
-const MyContent = ({ route }) => {
-  let InnerContent = () => null;
-  if (route === "#examples") InnerContent = Examples;
-  return (
-    <HeroBody style={{ padding: "1.5rem" }}>
-      <InnerContent />
-    </HeroBody>
-  );
-};
-export const MyFooter = () => (
-  <HeroFooter>
-    <Footer className="dark">
-      <Content isSize="small">
-        Source code licensed under the <a href="_blank">MIT License</a>.
-      </Content>
-    </Footer>
-  </HeroFooter>
+
+const MyBody = ({ children }) => (
+  <HeroBody style={{ padding: "1.5rem" }}>{children}</HeroBody>
 );
 
 export const Page = () => {
-  const [route, setRoute] = useState(document.location.hash);
-  const routes = [
-    { label: "Home", route: "#/" },
-    { label: "Examples", route: "#examples" }
-  ];
   return (
     <Hero isColor="info" isSize="medium" isFullHeight isBold>
-      <MyHeader routes={routes} activeRoute={route} setRoute={setRoute} />
-      <MyContent route={route} />
+      <Router Picker={MyHeader} Displayer={MyBody} />
     </Hero>
   );
 };
