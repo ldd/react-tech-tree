@@ -17,9 +17,6 @@ const MyHeader = ({ setRoute, ...otherProps }) => {
     <HeroHeader>
       <Navbar>
         <NavbarBrand>
-          <NavbarItem>
-            <b>React Tech Trees</b>
-          </NavbarItem>
           <NavbarBurger
             isActive={burgerStatus}
             onClick={() => setBurgerStatus(!burgerStatus)}
