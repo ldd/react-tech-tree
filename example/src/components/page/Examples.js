@@ -1,8 +1,8 @@
 import { Button, Columns, Column } from "bloomer";
 import React, { useState } from "react";
 import ExampleMenu from "../menu";
-import EffectsTree from "../effects";
-import SuperheroTree from "../superhero";
+import EffectsTree from "../../effects";
+import SuperheroTree from "../../superhero";
 
 const ExampleContent = ({ pick }) => (
   <Column style={{ maxWidth: "calc(100vw - 1.5rem)", overflowX: "scroll" }}>
