@@ -5,7 +5,7 @@ import {
   } from "bloomer";
 import React, { useState } from "react";
 
-export const MyMobileMenu = ({ clickHandler, labels = [] }) => {
+export const MyMobileMenu = ({ clickHandler, choices = [] }) => {
   const [dropdownStatus, setDropdownStatus] = useState(false);
   return (
     <Dropdown
@@ -26,7 +26,7 @@ export const MyMobileMenu = ({ clickHandler, labels = [] }) => {
       </DropdownTrigger>
       <DropdownMenu>
         <DropdownContent>
-          {labels.map(({ label, key }) => (
+          {choices.map(({ label, key }) => (
             <DropdownItem key={key} onClick={() => clickHandler(key)}>
               {label}
             </DropdownItem>
@@ -37,11 +37,11 @@ export const MyMobileMenu = ({ clickHandler, labels = [] }) => {
   );
 };
 
-export const MenuEntry = ({ clickHandler, label, entries = [] }) => (
+export const MenuEntry = ({ clickHandler, choices = [], label = "" }) => (
   <>
     <MenuLabel>{label}</MenuLabel>
     <MenuList>
-      {entries.map(({ label: entryLabel, key }) => (
+      {choices.map(({ label: entryLabel, key }) => (
         <li key={key}>
           <MenuLink onClick={() => clickHandler(key)}>{entryLabel}</MenuLink>
         </li>
@@ -50,16 +50,16 @@ export const MenuEntry = ({ clickHandler, label, entries = [] }) => (
   </>
 );
 
-export const MyDesktopMenu = ({ choices = [], clickHandler }) => (
+export const MyDesktopMenu = ({ clickHandler, choices = [] }) => (
   <Menu style={{ paddingRight: "1.5rem" }} isHidden="mobile">
     <MenuEntry
       label={"Simple"}
-      entries={choices.slice(0, 1)}
+      choices={choices.slice(0, 1)}
       clickHandler={clickHandler}
     />
     <MenuEntry
       label={"Decorated Links"}
-      entries={choices.slice(1)}
+      choices={choices.slice(1)}
       clickHandler={clickHandler}
     />
   </Menu>
@@ -68,7 +68,7 @@ export const MyDesktopMenu = ({ choices = [], clickHandler }) => (
 export const MyMenu = ({ clickHandler, choices = [] }) => (
   <>
     <MyDesktopMenu choices={choices} clickHandler={clickHandler} />
-    <MyMobileMenu labels={choices} clickHandler={clickHandler} />
+    <MyMobileMenu choices={choices} clickHandler={clickHandler} />
   </>
 );
 
