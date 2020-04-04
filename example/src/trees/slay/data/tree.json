@@ -1,10 +1,59 @@
 {
   "nodes": [
+    [{ "name": "boss_shield", "id": "boss0" }],
     [
-      { "name": "empty" },
-      { "name": "chest", "id": "chest0" },
-      { "name": "enemy", "id": "enemy0" }
+      { "name": "rest", "id": "rest0" },
+      { "name": "rest", "id": "rest1" },
+      { "name": "rest", "id": "rest2" },
+      { "name": "rest", "id": "rest3" },
+      { "name": "rest", "id": "rest4" }
+    ],
+    [
+      { "name": "enemy", "id": "enemy0" },
+      { "name": "unknown", "id": "unknown0" },
+      { "name": "enemy", "id": "enemy1" }
+    ],
+    [
+      { "name": "enemy", "id": "enemy2" },
+      { "name": "elite", "id": "elite0" },
+      { "name": "enemy", "id": "enemy3" }
+    ],
+    [
+      { "name": "enemy", "id": "enemy4" },
+      { "name": "enemy", "id": "enemy5" },
+      { "name": "elite", "id": "elite1" }
+    ],
+    [
+      { "name": "enemy", "id": "enemy6" },
+      { "name": "enemy", "id": "enemy7" },
+      { "name": "rest", "id": "rest5" },
+      { "name": "enemy", "id": "enemy8" }
     ]
   ],
-  "links": [{ "from": "chest0", "to": "enemy0" }]
+  "links": [
+    { "from": "boss0", "to": "rest0" },
+    { "from": "boss0", "to": "rest1" },
+    { "from": "boss0", "to": "rest2" },
+    { "from": "boss0", "to": "rest3" },
+    { "from": "boss0", "to": "rest4" },
+    { "from": "rest0", "to": "enemy0" },
+    { "from": "rest1", "to": "unknown0" },
+    { "from": "rest2", "to": "unknown0" },
+    { "from": "rest3", "to": "unknown0" },
+    { "from": "rest4", "to": "enemy1" },
+    { "from": "enemy0", "to": "enemy2" },
+    { "from": "unknown0", "to": "enemy2" },
+    { "from": "unknown0", "to": "elite0" },
+    { "from": "unknown0", "to": "enemy3" },
+    { "from": "enemy1", "to": "enemy3" },
+    { "from": "enemy2", "to": "enemy4" },
+    { "from": "enemy2", "to": "enemy5" },
+    { "from": "elite0", "to": "enemy5" },
+    { "from": "enemy3", "to": "elite1" },
+    { "from": "enemy4", "to": "enemy6" },
+    { "from": "enemy5", "to": "enemy7" },
+    { "from": "enemy5", "to": "rest5" },
+    { "from": "elite1", "to": "rest5" },
+    { "from": "elite1", "to": "enemy8" }
+  ]
 }

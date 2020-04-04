@@ -4,20 +4,18 @@ import treeData from "./data/tree.json";
 import spriteInformation from "./data/spritesheet.json";
 import spriteImage from "./data/spritesheet.png";
 import "./index.css";
-import { linkPathMaker as pathMaker } from "./linkHelper";
 
 const { nodes, links } = treeData;
 
 function SlayTree() {
   return (
     <Tree
-      id="superhero-tree"
+      id="slay-tree"
       nodes={nodes}
       links={links}
       nodeProps={{
         styleName: prepareSpritesheetStyle(spriteImage, spriteInformation)
       }}
-      linkProps={{ pathMaker }}
     />
   );
 }
