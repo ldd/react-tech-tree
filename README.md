@@ -7,6 +7,8 @@
 
 Create highly customizable tech trees (or generic graphical trees)
 
+![superheroes tree](https://raw.githubusercontent.com/ldd/react-tech-tree/master/example/public/gifs/x_men.gif)
+
 ## Features
 
 - Light
@@ -22,10 +24,6 @@ Create highly customizable tech trees (or generic graphical trees)
   - style links and nodes
   - ready to [use](https://github.com/ldd/react-tech-tree/tree/master/example/src/trees/text_tooltip/index.js) with [react-tooltip](https://github.com/wwayne/react-tooltip), etc
   - [good examples](https://github.com/ldd/react-tech-tree/tree/master/example/src/trees)
-
-![superheroes tree](https://raw.githubusercontent.com/ldd/react-tech-tree/master/example/public/gifs/x_men.gif)
-
-![effects tree](https://raw.githubusercontent.com/ldd/react-tech-tree/master/example/public/gifs/effects.gif)
 
 ## Installation
 
