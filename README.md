@@ -1,10 +1,8 @@
 # react-tech-tree
 
-> React tech tree component
-
 [![NPM](https://img.shields.io/npm/v/react-tech-tree.svg)](https://www.npmjs.com/package/react-tech-tree)
 
-Create highly customizable tech trees (or generic graphical trees) from json files
+Create highly customizable tech trees (or generic graphical trees)
 
 ## Features
 
@@ -17,9 +15,14 @@ Create highly customizable tech trees (or generic graphical trees) from json fil
   - sprite sheets (e.g: [TexturePacker](https://www.codeandweb.com/texturepacker))
   - individual images
 - Customizable
+
   - style links and nodes
-  - ready to use with [react-tooltip](https://github.com/wwayne/react-tooltip), etc
+  - ready to [use](https://github.com/ldd/react-tech-tree/tree/master/example/src/trees/text_tooltip/index.js) with [react-tooltip](https://github.com/wwayne/react-tooltip), etc
   - [good examples](https://github.com/ldd/react-tech-tree/tree/master/example/src/trees)
+
+![superheroes tree](https://raw.githubusercontent.com/ldd/react-tech-tree/master/example/public/gifs/x_men.gif)
+
+![effects tree](https://raw.githubusercontent.com/ldd/react-tech-tree/master/example/public/gifs/effects.gif)
 
 ## Installation
 
@@ -86,6 +89,11 @@ import { Sprite } from "react-tech-tree";
 ## Tips
 
 For further usage, go to the [examples page](https://github.com/ldd/react-tech-tree/tree/master/example/src/trees)
+
+## Inspiration
+
+- [tech-tree](https://github.com/ldd/tech-tree-js)
+  - vanilla javascript project I made a _long_ time ago
 
 ## License
 
