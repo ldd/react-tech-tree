@@ -5,7 +5,7 @@ import {
 } from "bloomer";
 import "bulma/css/bulma.min.css";
 import React, { useState } from "react";
-import { Router, RouterPicker } from "./Router";
+import { useRouter } from "./Router";
 
 const GithubItem = () => (
   <NavbarItem href="https://github.com/ldd/react-tech-tree" target="_blank">
@@ -20,7 +20,19 @@ const GithubItem = () => (
   </NavbarItem>
 );
 
-const MyHeader = ({ setRoute, ...otherProps }) => {
+const RoutePicker = ({ routes, clickHandler }) =>
+  routes.map(({ label, route, isActive }) => (
+    <NavbarItem
+      isActive={isActive}
+      href={route}
+      key={route}
+      onClick={() => clickHandler(route)}
+    >
+      {label}
+    </NavbarItem>
+  ));
+
+const MyHeader = ({ setRoute, routes }) => {
   const [burgerStatus, setBurgerStatus] = useState(false);
   const clickHandler = route => {
     setBurgerStatus(false);
@@ -37,7 +49,7 @@ const MyHeader = ({ setRoute, ...otherProps }) => {
         </NavbarBrand>
         <NavbarMenu isActive={burgerStatus}>
           <NavbarStart>
-            <RouterPicker {...otherProps} clickHandler={clickHandler} />
+            <RoutePicker clickHandler={clickHandler} routes={routes} />
             <GithubItem />
           </NavbarStart>
         </NavbarMenu>
@@ -51,9 +63,13 @@ const MyBody = ({ children }) => (
 );
 
 export const Page = () => {
+  const { routes, setRoute, ActiveComponent } = useRouter();
   return (
     <Hero isColor="info" isSize="medium" isFullHeight isBold>
-      <Router Picker={MyHeader} Displayer={MyBody} />
+      <MyHeader routes={routes} setRoute={setRoute} />
+      <MyBody>
+        <ActiveComponent />
+      </MyBody>
     </Hero>
   );
 };
