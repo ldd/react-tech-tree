@@ -2,16 +2,18 @@ import { Button, Columns, Column } from "bloomer";
 import React, { useState } from "react";
 import ExampleMenu from "../menu";
 import TextTree from "../../trees/text";
+import TextTooltipTree from "../../trees/text_tooltip";
 import EffectsTree from "../../trees/effects";
 import SuperheroTree from "../../trees/superhero";
 import SlayTree from "../../trees/slay";
 
-const types = ["Simple", "Decorated Links"];
+const types = ["Simple", "Themed", "Enhaced"];
 const choiceDic = {
   text: { label: "Text", key: "text", type: "Simple", Tree: TextTree },
   effects: { label: "Pixelated Effects", key: "effects", type: "Simple", Tree: EffectsTree }, // prettier-ignore
-  superhero: { label: "X-Men", key: "superhero", type: "Decorated Links", Tree: SuperheroTree }, // prettier-ignore
-  slay: { label: "Slay The Spire", key: "slay", type: "Decorated Links", Tree: SlayTree } // prettier-ignore
+  superhero: { label: "X-Men", key: "superhero", type: "Themed", Tree: SuperheroTree }, // prettier-ignore
+  slay: { label: "Slay The Spire", key: "slay", type: "Themed", Tree: SlayTree }, // prettier-ignore
+  text_tooltip: { label: "Text Tooltip", key: "text_tooltip", type: "Enhaced", Tree: TextTooltipTree } // prettier-ignore
 };
 
 const choices = Object.values(choiceDic);
