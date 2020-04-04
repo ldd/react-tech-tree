@@ -3,6 +3,7 @@
     [{ "name": "boss_shield", "id": "boss0" }],
     [
       { "name": "rest", "id": "rest0" },
+      { "name": "empty" },
       { "name": "rest", "id": "rest1" },
       { "name": "rest", "id": "rest2" },
       { "name": "rest", "id": "rest3" },
@@ -14,20 +15,26 @@
       { "name": "enemy", "id": "enemy1" }
     ],
     [
+      { "name": "empty" },
       { "name": "enemy", "id": "enemy2" },
       { "name": "elite", "id": "elite0" },
-      { "name": "enemy", "id": "enemy3" }
+      { "name": "enemy", "id": "enemy3" },
+      { "name": "empty" }
     ],
     [
       { "name": "enemy", "id": "enemy4" },
       { "name": "enemy", "id": "enemy5" },
+      { "name": "empty" },
       { "name": "elite", "id": "elite1" }
     ],
     [
       { "name": "enemy", "id": "enemy6" },
+      { "name": "empty" },
       { "name": "enemy", "id": "enemy7" },
+      { "name": "empty" },
       { "name": "rest", "id": "rest5" },
-      { "name": "enemy", "id": "enemy8" }
+      { "name": "enemy", "id": "enemy8" },
+      { "name": "empty" }
     ]
   ],
   "links": [
