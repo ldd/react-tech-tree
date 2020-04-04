@@ -1,11 +1,24 @@
 //prettier-ignore
-import { 
-  Hero, HeroBody, HeroHeader,
-  Navbar, NavbarBrand, NavbarBurger, NavbarMenu, NavbarStart
+import {
+  Hero, HeroBody, HeroHeader, Image, Title,
+  Navbar, NavbarBrand, NavbarBurger, NavbarItem, NavbarMenu, NavbarStart
 } from "bloomer";
 import "bulma/css/bulma.min.css";
 import React, { useState } from "react";
-import { RouterPicker, Router } from "./Router";
+import { Router, RouterPicker } from "./Router";
+
+const GithubItem = () => (
+  <NavbarItem href="https://github.com/ldd/react-tech-tree" target="_blank">
+    <Image
+      isSize="24x24"
+      src="https://cdn.brandicons.org/icons/github.svg"
+      isHidden="touch"
+    />
+    <Title isSize={6} isHidden="desktop">
+      Github
+    </Title>
+  </NavbarItem>
+);
 
 const MyHeader = ({ setRoute, ...otherProps }) => {
   const [burgerStatus, setBurgerStatus] = useState(false);
@@ -25,6 +38,7 @@ const MyHeader = ({ setRoute, ...otherProps }) => {
         <NavbarMenu isActive={burgerStatus}>
           <NavbarStart>
             <RouterPicker {...otherProps} clickHandler={clickHandler} />
+            <GithubItem />
           </NavbarStart>
         </NavbarMenu>
       </Navbar>
