@@ -1,0 +1,10 @@
+{
+  "nodes": [
+    [
+      { "name": "empty" },
+      { "name": "chest", "id": "chest0" },
+      { "name": "enemy", "id": "enemy0" }
+    ]
+  ],
+  "links": [{ "from": "chest0", "to": "enemy0" }]
+}

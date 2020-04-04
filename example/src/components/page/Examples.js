@@ -4,11 +4,13 @@ import ExampleMenu from "../menu";
 import TextTree from "../../trees/text";
 import EffectsTree from "../../trees/effects";
 import SuperheroTree from "../../trees/superhero";
+import SlayTree from "../../trees/slay";
 
 const choiceDic = {
   text: { label: "Text", key: "text", type: "Simple", Tree: TextTree },
   effects: { label: "Pixelated Effects", key: "effects", type: "Simple", Tree: EffectsTree }, // prettier-ignore
-  superhero: { label: "X-Men", key: "superhero", type: "Decorated Links", Tree: SuperheroTree } // prettier-ignore
+  superhero: { label: "X-Men", key: "superhero", type: "Decorated Links", Tree: SuperheroTree }, // prettier-ignore
+  slay: { label: "Slay The Spire", key: "slay", type: "Decorated Links", Tree: SlayTree } // prettier-ignore
 };
 
 const choices = Object.values(choiceDic);
