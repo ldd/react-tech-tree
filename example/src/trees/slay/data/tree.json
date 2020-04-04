@@ -2,28 +2,28 @@
   "nodes": [
     [{ "name": "boss_shield", "id": "boss0" }],
     [
-      { "name": "rest", "id": "rest0" },
+      { "name": "rest", "id": "rest0", "className": "Node Node-Pulled-Down" },
       { "name": "empty" },
-      { "name": "rest", "id": "rest1" },
-      { "name": "rest", "id": "rest2" },
+      { "name": "rest", "id": "rest1", "className": "Node Node-Pulled-Down" },
+      { "name": "rest", "id": "rest2", "className": "Node Node-Pulled-Up" },
       { "name": "rest", "id": "rest3" },
       { "name": "rest", "id": "rest4" }
     ],
     [
-      { "name": "enemy", "id": "enemy0" },
+      { "name": "enemy", "id": "enemy0", "className": "Node Node-Pulled-Down" },
       { "name": "unknown", "id": "unknown0" },
       { "name": "enemy", "id": "enemy1" }
     ],
     [
       { "name": "empty" },
       { "name": "enemy", "id": "enemy2" },
-      { "name": "elite", "id": "elite0" },
+      { "name": "elite", "id": "elite0", "className": "Node Node-Pulled-Up" },
       { "name": "enemy", "id": "enemy3" },
       { "name": "empty" }
     ],
     [
       { "name": "enemy", "id": "enemy4" },
-      { "name": "enemy", "id": "enemy5" },
+      { "name": "enemy", "id": "enemy5", "className": "Node Node-Pulled-Up" },
       { "name": "empty" },
       { "name": "elite", "id": "elite1" }
     ],
