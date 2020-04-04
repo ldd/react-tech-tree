@@ -5,7 +5,7 @@ import {
 } from "bloomer";
 import "bulma/css/bulma.min.css";
 import React, { useState } from "react";
-import { useRouter } from "./Router";
+import { useRouter } from "../../hooks/useRouter";
 
 const GithubItem = () => (
   <NavbarItem href="https://github.com/ldd/react-tech-tree" target="_blank">

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import { Examples } from "./Examples";
-import { Landing } from "./Landing";
+import { Examples } from "../components/page/Examples";
+import { Landing } from "../components/page/Landing";
 
 export const defaultRoutes = [
   { label: "Home", route: "#/", component: Landing },
