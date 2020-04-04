@@ -52,20 +52,26 @@ export const MenuEntry = ({ clickHandler, choices = [], type = "" }) => (
   </>
 );
 
-export const MyDesktopMenu = ({ clickHandler, choices = [] }) => (
+export const MyDesktopMenu = ({ clickHandler, choices = [], types = [] }) => (
   <Menu style={{ paddingRight: "1.5rem" }} isHidden="mobile">
-    <MenuEntry type={"Simple"} choices={choices} clickHandler={clickHandler} />
-    <MenuEntry
-      type={"Decorated Links"}
-      choices={choices}
-      clickHandler={clickHandler}
-    />
+    {types.map(type => (
+      <MenuEntry
+        key={type}
+        type={type}
+        choices={choices}
+        clickHandler={clickHandler}
+      />
+    ))}
   </Menu>
 );
 
-export const MyMenu = ({ clickHandler, choices = [] }) => (
+export const MyMenu = ({ clickHandler, choices = [], types = [] }) => (
   <>
-    <MyDesktopMenu choices={choices} clickHandler={clickHandler} />
+    <MyDesktopMenu
+      choices={choices}
+      clickHandler={clickHandler}
+      types={types}
+    />
     <MyMobileMenu choices={choices} clickHandler={clickHandler} />
   </>
 );

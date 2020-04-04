@@ -6,6 +6,7 @@ import EffectsTree from "../../trees/effects";
 import SuperheroTree from "../../trees/superhero";
 import SlayTree from "../../trees/slay";
 
+const types = ["Simple", "Decorated Links"];
 const choiceDic = {
   text: { label: "Text", key: "text", type: "Simple", Tree: TextTree },
   effects: { label: "Pixelated Effects", key: "effects", type: "Simple", Tree: EffectsTree }, // prettier-ignore
@@ -43,7 +44,7 @@ export const Examples = () => {
         justifyContent: "space-between"
       }}
     >
-      <ExampleMenu clickHandler={setPick} choices={choices} />
+      <ExampleMenu clickHandler={setPick} choices={choices} types={types} />
       <ExampleContent pick={pick} />
     </Columns>
   );
