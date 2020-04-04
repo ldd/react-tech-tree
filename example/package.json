@@ -4,12 +4,13 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
+    "bloomer": "^0.6.5",
+    "bulma": "^0.8.1",
     "react": "link:../node_modules/react",
     "react-dom": "link:../node_modules/react-dom",
     "react-scripts": "link:../node_modules/react-scripts",
     "react-tech-tree": "link:..",
-    "bloomer": "^0.6.5",
-    "bulma": "^0.8.1"
+    "react-tooltip": "^4.1.5"
   },
   "scripts": {
     "start": "node ../node_modules/react-scripts/bin/react-scripts.js start",
