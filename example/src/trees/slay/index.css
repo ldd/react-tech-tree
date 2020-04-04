@@ -8,6 +8,10 @@
   border: none;
   background-color: #898a7b;
 }
+#slay-tree.Tree .Node.active {
+  border-radius: 50%;
+  filter: saturate(4);
+}
 
 #slay-tree .Node.Node-Pulled-Up {
   margin-top: -35px;
