@@ -1,0 +1,13 @@
+#text-tree.Tree {
+  background-color: transparent;
+}
+#text-tree.Tree .Node {
+  border: solid;
+  border-color: grey;
+  border-width: 3px;
+  background-color: white;
+  z-index: 1;
+  outline: none;
+  width: fit-content;
+  height: fit-content;
+}
