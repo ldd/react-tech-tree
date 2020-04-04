@@ -14,6 +14,7 @@ Create highly customizable tech trees (or generic graphical trees)
 - Light
   - Zero dependencies (besides react)
   - Tree-shaking ready
+  - < 2Kb gzipped
 - Responsive
   - works on mobile, desktop, etc
 - Image Support
@@ -33,15 +34,15 @@ Create highly customizable tech trees (or generic graphical trees)
 ## Usage
 
 ```jsx
-import React, { Component } from "react";
+import React from "react";
 
 import { Tree } from "react-tech-tree";
 import "react-tech-tree/dist/index.css";
 
 const nodes = [
-  [ {id: "A", name: "A"}, {id:"B", name: "B"} ]
+  [ {id: "A0", name: "A"}, {id:"B0", name: "B"} ]
 ];
-const links = [{from: "A", to: "B"}];
+const links = [ {from: "A0", to: "B0"} ];
 
 function Example {
   return <Tree nodes={nodes} links={links}/>;
@@ -61,7 +62,7 @@ import { Tree } from "react-tech-tree";
 | id          | string         | id property (should be unique). E.g: [uuuid](https://github.com/uuidjs/uuid) |
 | links       | object[]       | object with links information                                                |
 | nodes       | object[]       | object with nodes information                                                |
-| nodeElement | ReactComponent | (optional) React Element to be used as Node. Defaults to Node.               |
+| NodeElement | ReactComponent | _(optional)_ React Element to be used as Node. Defaults to Node.             |
 | nodeProps   | object         | Properties to pass down to Node elements. See Node.                          |
 | linkProps   | object         | Properties to pass down to Link elements. See Link.                          |
 
@@ -81,11 +82,11 @@ import { Node } from "react-tech-tree";
 import { Sprite } from "react-tech-tree";
 ```
 
-| Prop      | Type         | Description                                                            |
-| --------- | ------------ | ---------------------------------------------------------------------- |
-| name      | string       | name of spritesheet entry or image name for this Sprite                |
-| scale     | number       | sprite's scale                                                         |
-| styleName | () => object | function to style the Sprite from its name. See examples for more info |
+| Prop      | Type         | Description                                                                                                                                        |
+| --------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| name      | string       | name of spritesheet entry or image name for this Sprite                                                                                            |
+| scale     | number       | sprite's scale                                                                                                                                     |
+| styleName | () => object | function to style the Sprite from its name. [Example](https://github.com/ldd/react-tech-tree/blob/master/example/src/trees/superhero/index.js#L18) |
 
 ## Tips
 
