@@ -1,6 +1,9 @@
 # react-tech-tree
 
 [![NPM](https://img.shields.io/npm/v/react-tech-tree.svg)](https://www.npmjs.com/package/react-tech-tree)
+[![Build Status](https://travis-ci.com/ldd/react-tech-tree.png?branch=master)](https://travis-ci.com/ldd/react-tech-tree)
+[![Dependencies](https://david-dm.org/ldd/react-tech-tree.svg)](https://david-dm.org/ldd/react-tech-tree)
+[![Size](https://badgen.net/bundlephobia/minzip/react-tech-tree)](https://bundlephobia.com/result?p=react-tech-tree@0.5.1)
 
 Create highly customizable tech trees (or generic graphical trees)
 
