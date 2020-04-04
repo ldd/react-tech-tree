@@ -1,7 +1,7 @@
 //prettier-ignore
 import { 
   Hero, HeroBody, HeroHeader,
-  Navbar, NavbarBrand, NavbarBurger, NavbarItem, NavbarMenu, NavbarStart
+  Navbar, NavbarBrand, NavbarBurger, NavbarMenu, NavbarStart
 } from "bloomer";
 import "bulma/css/bulma.min.css";
 import React, { useState } from "react";
