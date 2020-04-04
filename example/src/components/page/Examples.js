@@ -1,12 +1,26 @@
 import { Button, Columns, Column } from "bloomer";
 import React, { useState } from "react";
 import ExampleMenu from "../menu";
+import TextTree from "../../trees/text";
 import EffectsTree from "../../trees/effects";
 import SuperheroTree from "../../trees/superhero";
 
+const choiceDic = {
+  text: { label: "Text", key: "text", type: "Simple", Tree: TextTree },
+  effects: { label: "Pixelated Effects", key: "effects", type: "Simple", Tree: EffectsTree }, // prettier-ignore
+  superhero: { label: "X-Men", key: "superhero", type: "Decorated Links", Tree: SuperheroTree } // prettier-ignore
+};
+
+const choices = Object.values(choiceDic);
+
+const TreePicker = ({ pick }) => {
+  const { Tree = null } = choiceDic[pick] || {};
+  return <Tree />;
+};
+
 const ExampleContent = ({ pick }) => (
   <Column style={{ maxWidth: "calc(100vw - 1.5rem)", overflowX: "scroll" }}>
-    {pick === "superhero" ? <SuperheroTree /> : <EffectsTree />}
+    <TreePicker pick={pick} />
     <Button
       style={{ marginTop: "1.5rem" }}
       href={`https://github.com/ldd/react-tech-tree/blob/master/example/src/trees/${pick}/index.js`}
@@ -19,10 +33,6 @@ const ExampleContent = ({ pick }) => (
 
 export const Examples = () => {
   const [pick, setPick] = useState("superhero");
-  const choices = [
-    { label: "Pixelated Effects", key: "effects" },
-    { label: "X-Men", key: "superhero" }
-  ];
   return (
     <Columns
       style={{

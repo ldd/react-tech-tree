@@ -37,29 +37,27 @@ export const MyMobileMenu = ({ clickHandler, choices = [] }) => {
   );
 };
 
-export const MenuEntry = ({ clickHandler, choices = [], label = "" }) => (
+export const MenuEntry = ({ clickHandler, choices = [], type = "" }) => (
   <>
-    <MenuLabel>{label}</MenuLabel>
+    <MenuLabel>{type}</MenuLabel>
     <MenuList>
-      {choices.map(({ label: entryLabel, key }) => (
-        <li key={key}>
-          <MenuLink onClick={() => clickHandler(key)}>{entryLabel}</MenuLink>
-        </li>
-      ))}
+      {choices
+        .filter(choice => choice.type === type)
+        .map(({ label: entryLabel, key }) => (
+          <li key={key}>
+            <MenuLink onClick={() => clickHandler(key)}>{entryLabel}</MenuLink>
+          </li>
+        ))}
     </MenuList>
   </>
 );
 
 export const MyDesktopMenu = ({ clickHandler, choices = [] }) => (
   <Menu style={{ paddingRight: "1.5rem" }} isHidden="mobile">
+    <MenuEntry type={"Simple"} choices={choices} clickHandler={clickHandler} />
     <MenuEntry
-      label={"Simple"}
-      choices={choices.slice(0, 1)}
-      clickHandler={clickHandler}
-    />
-    <MenuEntry
-      label={"Decorated Links"}
-      choices={choices.slice(1)}
+      type={"Decorated Links"}
+      choices={choices}
       clickHandler={clickHandler}
     />
   </Menu>
