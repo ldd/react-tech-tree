@@ -1,7 +1,14 @@
 #superhero-tree.Tree {
   background-color: #d5c8b5;
   min-width: 700px;
+  min-height: 1200px;
 }
+#superhero-tree.Tree .Tree-Row {
+  align-items: flex-end;
+  justify-content: space-between;
+  margin: 16px 0px;
+}
+
 #superhero-tree.Tree .Node {
   border: none;
   background-color: transparent;
@@ -17,10 +24,16 @@
 }
 #superhero-tree .Tree-Links > path.offspring {
   stroke: crimson;
+  stroke-linecap: round;
 }
 
 #superhero-tree .Tree-Links > path.nemesis {
   stroke: purple;
+  stroke-dasharray: 5px;
+}
+
+#superhero-tree .Tree-Links > path.clone {
+  stroke: orange;
   stroke-dasharray: 5px;
 }
 

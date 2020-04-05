@@ -1,4 +1,4 @@
-const EPSILON = 1;
+const EPSILON = 4;
 
 export const linkPathMaker = (p0, p1, linkProps) => {
   const { x: x0, y: y0, width: w0, height: h0 } = p0;
@@ -8,10 +8,8 @@ export const linkPathMaker = (p0, p1, linkProps) => {
   const [tx, ty] = [Math.floor(x1 + w1 / 2), Math.floor(y1 + h1 / 2)];
   const { className: type } = linkProps;
   if (type === "offspring") {
-    if (Math.abs(sx - tx) < 50) {
-      return `M ${sx} ${sy + h0 / 2} L ${tx} ${ty}`;
-    }
-    return `
+    if (!(Math.abs(sx - tx) < 50))
+      return `
       M ${sx} ${sy + h0 / 2} L ${sx} ${sy + h0 / 2 + 10}
       M ${sx} ${sy + h0 / 2 + 10}
         Q ${tx} ${sy + (ty - sy) / 2} ${tx} ${ty - 10 - h1 / 2}
@@ -19,9 +17,12 @@ export const linkPathMaker = (p0, p1, linkProps) => {
       `;
   }
 
+  // same row
   if (Math.abs(sy - ty) < EPSILON) {
-    return `M ${sx} ${sy} Q ${(sx + tx) / 2} ${sy - (tx - sx) / 5} ${tx} ${ty}`;
+    const yOffset = -(tx - sx) / 3;
+    return `M ${sx} ${sy} Q ${(sx + tx) / 2} ${sy + yOffset} ${tx} ${ty}`;
   }
+  // same column
   if (Math.abs(sx - tx) < EPSILON) {
     return `M ${sx} ${sy} L ${tx} ${ty}`;
   }
