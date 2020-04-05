@@ -10,5 +10,5 @@ export const clickHandler = e => {
 };
 
 export const Node = props => {
-  return <Sprite className="Node" {...props} onClick={clickHandler} />;
+  return <Sprite className="Node" onClick={clickHandler} {...props} />;
 };
