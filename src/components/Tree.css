@@ -1,4 +1,5 @@
 .Tree {
+  background-color: transparent;
   position: relative;
   display: flex;
   justify-content: space-evenly;

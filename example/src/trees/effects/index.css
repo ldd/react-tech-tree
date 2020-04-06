@@ -1,11 +1,3 @@
-#effects-tree.Tree {
-  background-color: transparent;
-}
-#effects-tree.Tree .Node {
-  border: solid;
-  border-width: 1px;
-  background-color: white;
-}
 #effects-tree.Tree .Node:not(.active) {
   filter: grayscale(100%);
 }
