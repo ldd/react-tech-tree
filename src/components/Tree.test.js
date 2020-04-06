@@ -89,4 +89,18 @@ describe("Tree", () => {
     const activeLink = container.querySelector(".Link.active");
     expect(activeLink).toBeNull();
   });
+  it("can ignore invalid Links", () => {
+    const invalidLinks = [{ from: "A" }];
+    ReactDOM.render(<Tree nodes={nodesData} links={invalidLinks} />, container);
+    const domNodes = container.querySelectorAll(".Node");
+    const clickedNode = domNodes[0];
+    act(() => {
+      clickedNode.dispatchEvent(new MouseEvent("click", { bubbles: true }));
+    });
+    const activeNode = container.querySelector(".Node.active");
+    expect(activeNode).toBeDefined();
+
+    const activeLink = container.querySelector(".Link.active");
+    expect(activeLink).toBeNull();
+  });
 });
