@@ -41,7 +41,7 @@ const onClick = e => {
 
   // we are interested in links that end at node N (A-N, B-N, C-N, etc)
   const id = e.target.id;
-  const links = document.querySelectorAll(`path[id$=${id}]`);
+  const links = document.querySelectorAll(`.Link[id$=${id}]`);
   links.forEach(link => {
     link.classList.toggle("active");
     toggleDependants(link.id, isActive);

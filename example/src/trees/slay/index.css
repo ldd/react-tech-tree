@@ -56,7 +56,7 @@
   height: 256px;
 }
 
-#slay-tree .Tree-Links > path {
+#slay-tree .Link {
   stroke-dasharray: 9px;
   stroke-width: 3px;
   stroke: #706f65;

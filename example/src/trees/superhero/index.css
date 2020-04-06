@@ -14,29 +14,29 @@
   background-color: transparent;
 }
 
-#superhero-tree .Tree-Links > path.married {
+#superhero-tree .Link.married {
   stroke: steelblue;
 }
 
-#superhero-tree .Tree-Links > path.dating {
+#superhero-tree .Link.dating {
   stroke: #619db1;
   stroke-dasharray: 5px;
 }
-#superhero-tree .Tree-Links > path.offspring {
+#superhero-tree .Link.offspring {
   stroke: crimson;
   stroke-linecap: round;
 }
 
-#superhero-tree .Tree-Links > path.nemesis {
+#superhero-tree .Link.nemesis {
   stroke: purple;
   stroke-dasharray: 5px;
 }
 
-#superhero-tree .Tree-Links > path.clone {
+#superhero-tree .Link.clone {
   stroke: orange;
   stroke-dasharray: 5px;
 }
 
-#superhero-tree .Tree-Links > path.other {
+#superhero-tree .Link.other {
   stroke: forestgreen;
 }
