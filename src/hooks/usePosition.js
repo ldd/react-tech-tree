@@ -1,7 +1,9 @@
 import { useLayoutEffect, useRef, useState } from "react";
 import { getNodeDOMPositions, simplePathMaker } from "../helpers/svgHelper";
 
-const usePosition = ({ links = [], pathMaker = simplePathMaker }) => {
+//
+
+const usePosition = ({ links = [], pathMaker = simplePathMaker } = {}) => {
   // we must use a reference since we need Node's DOM position
   // https://stackoverflow.com/a/55996413
   const ref = useRef();
