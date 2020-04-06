@@ -4,19 +4,10 @@ import { Node } from "./Node";
 import { Link } from "./Link";
 import { getNodeDOMPositions, simplePathMaker } from "../helpers/svgHelper";
 
-export const Tree = ({
-  id = "tech-tree",
-  links = [],
-  nodes = [],
-  NodeElement = Node,
-  LinkElement = Link,
-  nodeProps = {},
-  linkProps = {}
-}) => {
+const usePosition = ({ links = [], pathMaker = simplePathMaker }) => {
   // https://stackoverflow.com/a/55996413
   const ref = useRef();
   const [nodePositions, setNodePositions] = useState(links);
-  const { pathMaker = simplePathMaker, ...otherLinkProps } = linkProps;
   const repositionLinks = () =>
     setNodePositions(
       getNodeDOMPositions(nodePositions, ref.current, pathMaker)
@@ -28,6 +19,20 @@ export const Tree = ({
     window.addEventListener("resize", repositionLinks);
     return () => window.removeEventListener("resize", repositionLinks);
   }, []);
+  return { ref, nodePositions };
+};
+
+export const Tree = ({
+  id = "tech-tree",
+  links = [],
+  nodes = [],
+  NodeElement = Node,
+  LinkElement = Link,
+  nodeProps = {},
+  linkProps = {}
+}) => {
+  const { pathMaker, ...otherLinkProps } = linkProps;
+  const { ref, nodePositions } = usePosition({ links, pathMaker });
   return (
     <div className="Tree" id={id} ref={ref}>
       <svg className="Tree-Links">
@@ -47,20 +52,21 @@ export const Tree = ({
   );
 };
 
+/**
+ * React Component made up of NodeElements inside Tree-Rows made from a 2D array of nodes
+ */
 const TreeNodes = ({ nodes = [], NodeElement = Node, nodeProps = {} }) =>
   nodes.map((siblings, depth) => (
-    <div key={depth} className="Tree-Row">
+    <div key={`tree-row-${depth}`} className="Tree-Row">
       {siblings.map((props, i) => (
-        <NodeElement
-          key={`node-${props.id || i}`}
-          scale={1}
-          {...nodeProps}
-          {...props}
-        />
+        <NodeElement key={`node-${props.id || i}`} {...nodeProps} {...props} />
       ))}
     </div>
   ));
 
+/**
+ * React Component made up of LinkElement made from an array of links augmented by nodePositions information
+ */
 const TreeLink = ({
   links = [],
   LinkElement = Link,
@@ -68,10 +74,13 @@ const TreeLink = ({
   nodePositions = []
 }) => {
   return links.map(({ from, to, ...props }, i) => {
-    const { pathData } = nodePositions[i];
+    const { pathData } = nodePositions[i] || {};
     if (!pathData) return null;
+
     const id = `${from}-${to}`;
-    const allProps = { ...linkProps, ...props };
-    return <LinkElement id={id} key={id} pathData={pathData} {...allProps} />;
+    const allLinkProps = { ...linkProps, ...props };
+    return (
+      <LinkElement id={id} key={id} pathData={pathData} {...allLinkProps} />
+    );
   });
 };
