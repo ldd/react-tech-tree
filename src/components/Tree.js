@@ -17,7 +17,7 @@ export const Tree = ({
   const { ref, nodePositions } = usePosition({ links, pathMaker });
   return (
     <div className="Tree" id={id} ref={ref}>
-      <svg className="Tree-Links">
+      <svg className="Link-Container">
         <TreeLink
           links={links}
           LinkElement={LinkElement}
