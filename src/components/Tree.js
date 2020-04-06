@@ -1,26 +1,8 @@
-import React, { useState, useRef, useEffect } from "react";
+import React from "react";
 import "./Tree.css";
 import { Node } from "./Node";
 import { Link } from "./Link";
-import { getNodeDOMPositions, simplePathMaker } from "../helpers/svgHelper";
-
-const usePosition = ({ links = [], pathMaker = simplePathMaker }) => {
-  // https://stackoverflow.com/a/55996413
-  const ref = useRef();
-  const [nodePositions, setNodePositions] = useState(links);
-  const repositionLinks = () =>
-    setNodePositions(
-      getNodeDOMPositions(nodePositions, ref.current, pathMaker)
-    );
-
-  // https://gist.github.com/gaearon/cb5add26336003ed8c0004c4ba820eae
-  useEffect(() => {
-    repositionLinks();
-    window.addEventListener("resize", repositionLinks);
-    return () => window.removeEventListener("resize", repositionLinks);
-  }, []);
-  return { ref, nodePositions };
-};
+import usePosition from "../hooks/usePosition";
 
 export const Tree = ({
   id = "tech-tree",
