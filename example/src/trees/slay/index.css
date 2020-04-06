@@ -18,10 +18,7 @@
 }
 
 #slay-tree.Tree .Tree-Row:not(:first-of-type) .Node:hover {
-  /*
-  important is used because each Node may have its own scale
-  (with higher priority than this selector)
-  */
+  /* important is used because each Node may have its own scale  (with higher priority than this selector) */
   transform: scale(1.2) !important;
 }
 
