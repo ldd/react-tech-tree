@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import { getNodeDOMPositions, simplePathMaker } from "../helpers/svgHelper";
 
 const usePosition = ({ links = [], pathMaker = simplePathMaker }) => {
@@ -14,7 +14,7 @@ const usePosition = ({ links = [], pathMaker = simplePathMaker }) => {
   // make sure to reposition links on window resize
   // to make content responsive
   // https://gist.github.com/gaearon/cb5add26336003ed8c0004c4ba820eae
-  useEffect(() => {
+  useLayoutEffect(() => {
     repositionLinks();
     window.addEventListener("resize", repositionLinks);
     return () => window.removeEventListener("resize", repositionLinks);
