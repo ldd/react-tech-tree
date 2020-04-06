@@ -8,7 +8,7 @@ export const clickHandler = e => {
 
   // toggle links that start with this Node active
   const id = e.target.id;
-  const links = document.querySelectorAll(`path[id^=${id}]`);
+  const links = document.querySelectorAll(`.Link[id^=${id}]`);
   links.forEach(link => link.classList.toggle("active"));
 };
 
