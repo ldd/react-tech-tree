@@ -17,7 +17,9 @@ describe("Tree", () => {
       { id: "B", name: "B" }
     ]
   ];
+  const invalidnodesData = [[{ name: "A" }, { name: "B" }]];
   const links = [{ from: "A", to: "B" }];
+
   let container;
   beforeEach(() => {
     container = document.createElement("div");
@@ -34,6 +36,20 @@ describe("Tree", () => {
   });
   it("can create simple Tree", () => {
     const component = renderer.create(<Tree nodes={nodesData} links={links} />);
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  it("can create simple Tree with invalid node data", () => {
+    const component = renderer.create(<Tree nodes={invalidnodesData} />);
+    const tree = component.toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+  it("can create simple Tree with custom NodeElement", () => {
+    const NodeElement = ({ id, name }) => <button id={id}>{name}</button>;
+    const component = renderer.create(
+      <Tree nodes={nodesData} links={links} NodeElement={NodeElement} />
+    );
+    expect(component.root.findAllByType(NodeElement)).toHaveLength(2);
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
@@ -57,7 +73,7 @@ describe("Tree", () => {
       expect(domLink.id).toBe(expectedId);
     });
   });
-  it("can activate Nodes", () => {
+  it("can render and activate Nodes", () => {
     ReactDOM.render(<Tree nodes={nodesData} links={links} />, container);
     const domNodes = container.querySelectorAll(".Node");
     const clickedNode = domNodes[0];
@@ -73,7 +89,7 @@ describe("Tree", () => {
     expect(activeLink).toBeDefined();
     expect(activeLink).toEqual(expect.objectContaining({ id: expectedLinkId }));
   });
-  it("can deactivate Nodes", () => {
+  it("can render and deactivate Nodes", () => {
     ReactDOM.render(<Tree nodes={nodesData} links={links} />, container);
     const domNodes = container.querySelectorAll(".Node");
     const clickedNode = domNodes[0];
@@ -89,7 +105,7 @@ describe("Tree", () => {
     const activeLink = container.querySelector(".Link.active");
     expect(activeLink).toBeNull();
   });
-  it("can ignore invalid Links", () => {
+  it("can render and ignore invalid Links", () => {
     const invalidLinks = [{ from: "A" }];
     ReactDOM.render(<Tree nodes={nodesData} links={invalidLinks} />, container);
     const domNodes = container.querySelectorAll(".Node");
@@ -102,5 +118,12 @@ describe("Tree", () => {
 
     const activeLink = container.querySelector(".Link.active");
     expect(activeLink).toBeNull();
+  });
+  it("can render with invalid node data", () => {
+    ReactDOM.render(<Tree nodes={invalidnodesData} links={links} />, container);
+    const domNode = container.querySelector(".Node");
+    expect(domNode).toBeDefined();
+    const domLink = container.querySelector(".Links");
+    expect(domLink).toBeNull();
   });
 });
