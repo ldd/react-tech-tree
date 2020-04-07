@@ -61,14 +61,14 @@ function ExampleComponent() {
 import { Tree } from "react-tech-tree";
 ```
 
-| Prop        | Type           | Description                                                                  |
-| ----------- | -------------- | ---------------------------------------------------------------------------- |
-| id          | string         | id property (should be unique). E.g: [uuuid](https://github.com/uuidjs/uuid) |
-| links       | object[]       | object with links information                                                |
-| nodes       | object[]       | object with nodes information                                                |
-| NodeElement | ReactComponent | _(optional)_ React Element to be used as Node. Defaults to Node.             |
-| nodeProps   | object         | Properties to pass down to Node elements. See Node.                          |
-| linkProps   | object         | Properties to pass down to Link elements. See Link.                          |
+| Prop        | Type           | Description                                                                                                        |
+| ----------- | -------------- | ------------------------------------------------------------------------------------------------------------------ |
+| id          | `string`       | id property (should be unique). E.g: [uuuid](https://github.com/uuidjs/uuid)                                       |
+| links       | `object[]`     | object with links information                                                                                      |
+| nodes       | `object[]`     | object with nodes information                                                                                      |
+| NodeElement | ReactComponent | _(optional)_ React Element to be used as Node. Defaults to [`Node`](https://github.com/ldd/react-tech-tree/#node). |
+| nodeProps   | `object`       | _(optional)_ Properties to pass down to Node elements. See [`Node`](https://github.com/ldd/react-tech-tree/#node). |
+| linkProps   | `object`       | _(optional)_ Properties to pass down to Link elements. See [`Link`](https://github.com/ldd/react-tech-tree/#link). |
 
 ### _Node_
 
@@ -76,9 +76,9 @@ import { Tree } from "react-tech-tree";
 import { Node } from "react-tech-tree";
 ```
 
-| Prop         | Type       | Description                                  |
-| ------------ | ---------- | -------------------------------------------- |
-| clickHandler | () => void | Event Handler fired when the Node is clicked |
+| Prop         | Type                      | Description                                  |
+| ------------ | ------------------------- | -------------------------------------------- |
+| clickHandler | (e: `MouseEvent`) => void | Event Handler fired when the Node is clicked |
 
 ### _Sprite_
 
@@ -86,11 +86,11 @@ import { Node } from "react-tech-tree";
 import { Sprite } from "react-tech-tree";
 ```
 
-| Prop      | Type         | Description                                                                                                                                        |
-| --------- | ------------ | -------------------------------------------------------------------------------------------------------------------------------------------------- |
-| name      | string       | name of spritesheet entry or image name for this Sprite                                                                                            |
-| scale     | number       | sprite's scale                                                                                                                                     |
-| styleName | () => object | function to style the Sprite from its name. [Example](https://github.com/ldd/react-tech-tree/blob/master/example/src/trees/superhero/index.js#L18) |
+| Prop      | Type           | Description                                                                                                                                        |
+| --------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
+| name      | `string`       | name of spritesheet entry or image name for this Sprite                                                                                            |
+| scale     | `number`       | sprite's scale                                                                                                                                     |
+| styleName | () => `object` | function to style the Sprite from its name. [Example](https://github.com/ldd/react-tech-tree/blob/master/example/src/trees/superhero/index.js#L18) |
 
 ### _helpers_
 
@@ -100,8 +100,8 @@ import { Sprite } from "react-tech-tree";
 import { nodeClickHandler } from "react-tech-tree";
 ```
 
-ClickHandler function used by Node internally.
-Use it when you are trying to build a custom `NodeElement` that you pass to a `Tree`.
+clickHandler function used by [`Node`](https://github.com/ldd/react-tech-tree/#node) internally.
+Use it when you are trying to build a custom `NodeElement` that you pass to a [`Tree`](https://github.com/ldd/react-tech-tree/#tree).
 
 It will:
 
@@ -130,7 +130,7 @@ function ExampleComponent() {
 import { prepareSpritesheetStyle } from "react-tech-tree";
 ```
 
-When using spritesheets, you may need to style each `Sprite` based on its name.
+When using spritesheets, you may need to style each [`Sprite`](https://github.com/ldd/react-tech-tree/#sprite) based on its name.
 
 If you are using [TexturePacker](https://www.codeandweb.com/texturepacker), you can use this function as follows:
 
@@ -160,12 +160,12 @@ Pure function that return a string path between the center of two rectangles.
 ```js
 const rect0 = { x: 0, y: 24, width: 4, height: 4 };
 const rect1 = { x: 8, y: 32, width: 2, height: 2 };
-const path = simplePathMaker(point, point);
+const path = simplePathMaker(rect0, rect1);
 // "M 2 26 L 9 33"
 ```
 
 It is used at the default value for building links between `Nodes`.
-It can be passed down in `linkProps` to a `Tree`. See [example](https://github.com/ldd/react-tech-tree/blob/master/example/src/trees/superhero/linkHelper.js)
+It can be passed down in `linkProps` to a [`Tree`](https://github.com/ldd/react-tech-tree/#tree). See [example](https://github.com/ldd/react-tech-tree/blob/master/example/src/trees/superhero/linkHelper.js)
 
 ```jsx
 //...
