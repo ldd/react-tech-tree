@@ -1,22 +1,23 @@
 {
   "nodes": [
     [
-      { "name": "effects_1", "id": "A" },
-      { "name": "effects_2", "id": "B" }
+      { "name": "icon_104", "id": "A" },
+      { "name": "icon_92", "id": "B" }
     ],
     [
-      { "name": "effects_4", "id": "C" },
-      { "name": "effects_5", "id": "D" },
-      { "name": "effects_6", "id": "E" }
+      { "name": "icon_79", "id": "C" },
+      { "name": "icon_80", "id": "D" },
+      { "name": "icon_104", "id": "E" },
+      { "name": "icon_86", "id": "F" },
+      { "name": "icon_67", "id": "G" }
     ]
   ],
   "links": [
-    {
-      "from": "A",
-      "to": "C",
-      "style": { "stroke": "red", "strokeDasharray": "15" }
-    },
+    { "from": "A", "to": "C" },
     { "from": "A", "to": "D" },
-    { "from": "B", "to": "E" }
+    { "from": "A", "to": "E" },
+    { "from": "B", "to": "E" },
+    { "from": "B", "to": "F" },
+    { "from": "B", "to": "G" }
   ]
 }
