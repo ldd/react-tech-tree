@@ -9,6 +9,7 @@
     "react": "link:../node_modules/react",
     "react-dom": "link:../node_modules/react-dom",
     "react-scripts": "link:../node_modules/react-scripts",
+    "react-simplest-router": "^1.0.0",
     "react-tech-tree": "link:..",
     "react-tooltip": "^4.1.5"
   },

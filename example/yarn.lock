@@ -8408,6 +8408,11 @@ react-is@^16.8.1, react-is@^16.8.4:
   version "0.0.0"
   uid ""
 
+react-simplest-router@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/react-simplest-router/-/react-simplest-router-1.0.0.tgz#831705234dbca35a522c6237cfb2bc152b8f1ffd"
+  integrity sha512-mCBZbHfjJjHEB10avhMMG4rClKq+7O6RWkAb6A7yzFsSqyAu9d5MwKXKMrZ/k5I64umeqqxQ2mWYX/oeBZp00g==
+
 "react-tech-tree@link:..":
   version "0.0.0"
   uid ""
