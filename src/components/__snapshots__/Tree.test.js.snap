@@ -26,21 +26,13 @@ exports[`React Component [Tree] can create simple Tree 1`] = `
       className="Node Sprite"
       id="A"
       onClick={[Function]}
-      style={
-        Object {
-          "transform": "scale(1)",
-        }
-      }
+      style={Object {}}
     />
     <div
       className="Node Sprite"
       id="B"
       onClick={[Function]}
-      style={
-        Object {
-          "transform": "scale(1)",
-        }
-      }
+      style={Object {}}
     />
   </div>
 </div>
@@ -85,20 +77,12 @@ exports[`React Component [Tree] can create simple Tree with invalid node data 1`
     <div
       className="Node Sprite"
       onClick={[Function]}
-      style={
-        Object {
-          "transform": "scale(1)",
-        }
-      }
+      style={Object {}}
     />
     <div
       className="Node Sprite"
       onClick={[Function]}
-      style={
-        Object {
-          "transform": "scale(1)",
-        }
-      }
+      style={Object {}}
     />
   </div>
 </div>

@@ -4,21 +4,13 @@ exports[`React Component [Sprite] can create Sprite with extra props 1`] = `
 <div
   className="someClass Sprite"
   someProp="@value"
-  style={
-    Object {
-      "transform": "scale(1)",
-    }
-  }
+  style={Object {}}
 />
 `;
 
 exports[`React Component [Sprite] can create empty Sprite 1`] = `
 <div
   className=" Sprite"
-  style={
-    Object {
-      "transform": "scale(1)",
-    }
-  }
+  style={Object {}}
 />
 `;

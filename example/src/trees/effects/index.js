@@ -14,8 +14,7 @@ function EffectsTree() {
       nodes={nodes}
       links={links}
       nodeProps={{
-        styleName: prepareSpritesheetStyle(spriteImage, spriteInformation),
-        scale: 3
+        styleName: prepareSpritesheetStyle(spriteImage, spriteInformation)
       }}
     />
   );
