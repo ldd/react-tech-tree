@@ -151,7 +151,31 @@ function ExampleComponent() {
 
 #### simplePathMaker
 
-(to be added)
+```js
+import { simplePathMaker } from "react-tech-tree";
+```
+
+Pure function that return a string path between the center of two rectangles.
+
+```js
+const rect0 = { x: 0, y: 24, width: 4, height: 4 };
+const rect1 = { x: 8, y: 32, width: 2, height: 2 };
+const path = simplePathMaker(point, point);
+// "M 2 26 L 9 33"
+```
+
+It is used at the default value for building links between `Nodes`.
+It can be passed down in `linkProps` to a `Tree`. See [example](https://github.com/ldd/react-tech-tree/blob/master/example/src/trees/superhero/linkHelper.js)
+
+```jsx
+//...
+
+const linkProps = { pathMaker: simplePathMaker };
+
+function ExampleComponent() {
+  return <Tree nodes={nodes} links={links} linkProps={linkProps} />;
+}
+```
 
 ## Tips
 
