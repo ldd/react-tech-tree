@@ -37,24 +37,19 @@ export const Tree = ({
 /**
  * React Component made up of NodeElements inside Tree-Rows made from a 2D array of nodes
  */
-const TreeNodes = ({ nodes = [], NodeElement = Node, nodeProps = {} }) =>
-  nodes.map((siblings, depth) => (
+const TreeNodes = ({ nodes, NodeElement, nodeProps }) => {
+  return nodes.map((siblings, depth) => (
     <div key={`tree-row-${depth}`} className="Tree-Row">
       {siblings.map((props, i) => (
         <NodeElement key={`node-${props.id || i}`} {...nodeProps} {...props} />
       ))}
     </div>
   ));
-
+};
 /**
  * React Component made up of LinkElement made from an array of links augmented by nodePositions information
  */
-const TreeLink = ({
-  links = [],
-  LinkElement = Link,
-  linkProps = {},
-  nodePositions = []
-}) => {
+const TreeLink = ({ links, LinkElement, linkProps, nodePositions }) => {
   return links.map(({ from, to, ...props }, i) => {
     const { pathData } = nodePositions[i] || {};
     if (!pathData) return null;

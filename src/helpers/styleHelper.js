@@ -1,7 +1,9 @@
 export const styleScale = scale => ({ transform: `scale(${scale})` });
 
-const frameStyle = ({ frame } = { frame: {} }) => {
-  const { w: width = 16, h: height = 16, x = 0, y = 0 } = frame;
+export const DEFAULT_FRAME = { w: 16, h: 16, x: 0, y: 0 };
+
+const frameStyle = ({ frame } = { frame: DEFAULT_FRAME }) => {
+  const { w: width, h: height, x, y } = frame;
   return { width, height, backgroundPosition: `-${x}px -${y}px` };
 };
 

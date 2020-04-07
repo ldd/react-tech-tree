@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Examples } from "../components/page/Examples";
 import { Landing } from "../components/page/Landing";
 
@@ -7,7 +7,6 @@ export const defaultRoutes = [
   { label: "Examples", route: "#examples", component: Examples }
 ];
 
-const Empty = () => <></>;
 export const useRouter = (routes = defaultRoutes) => {
   const [activeRoute, setRoute] = useState(document.location.hash);
   const ourRoutes = routes.map(({ label, route }) => ({
@@ -16,6 +15,6 @@ export const useRouter = (routes = defaultRoutes) => {
     isActive: route === activeRoute
   }));
   const route = routes.find(({ route }) => route === activeRoute);
-  const ActiveComponent = route === undefined ? Empty : route.component;
+  const ActiveComponent = route === undefined ? Landing : route.component;
   return { setRoute, routes: ourRoutes, ActiveComponent };
 };

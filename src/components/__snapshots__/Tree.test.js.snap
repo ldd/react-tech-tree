@@ -1,0 +1,105 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`React Component [Tree] can create empty Tree 1`] = `
+<div
+  className="Tree"
+  id="tech-tree"
+>
+  <svg
+    className="Link-Container"
+  />
+</div>
+`;
+
+exports[`React Component [Tree] can create simple Tree 1`] = `
+<div
+  className="Tree"
+  id="tech-tree"
+>
+  <svg
+    className="Link-Container"
+  />
+  <div
+    className="Tree-Row"
+  >
+    <div
+      className="Node Sprite"
+      id="A"
+      onClick={[Function]}
+      style={
+        Object {
+          "transform": "scale(1)",
+        }
+      }
+    />
+    <div
+      className="Node Sprite"
+      id="B"
+      onClick={[Function]}
+      style={
+        Object {
+          "transform": "scale(1)",
+        }
+      }
+    />
+  </div>
+</div>
+`;
+
+exports[`React Component [Tree] can create simple Tree with custom NodeElement 1`] = `
+<div
+  className="Tree"
+  id="tech-tree"
+>
+  <svg
+    className="Link-Container"
+  />
+  <div
+    className="Tree-Row"
+  >
+    <button
+      id="A"
+    >
+      A
+    </button>
+    <button
+      id="B"
+    >
+      B
+    </button>
+  </div>
+</div>
+`;
+
+exports[`React Component [Tree] can create simple Tree with invalid node data 1`] = `
+<div
+  className="Tree"
+  id="tech-tree"
+>
+  <svg
+    className="Link-Container"
+  />
+  <div
+    className="Tree-Row"
+  >
+    <div
+      className="Node Sprite"
+      onClick={[Function]}
+      style={
+        Object {
+          "transform": "scale(1)",
+        }
+      }
+    />
+    <div
+      className="Node Sprite"
+      onClick={[Function]}
+      style={
+        Object {
+          "transform": "scale(1)",
+        }
+      }
+    />
+  </div>
+</div>
+`;
