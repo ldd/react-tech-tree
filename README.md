@@ -89,6 +89,46 @@ import { Sprite } from "react-tech-tree";
 | scale     | number       | sprite's scale                                                                                                                                     |
 | styleName | () => object | function to style the Sprite from its name. [Example](https://github.com/ldd/react-tech-tree/blob/master/example/src/trees/superhero/index.js#L18) |
 
+### _helpers_
+
+#### nodeClickHandler
+
+```js
+import { nodeClickHandler } from "react-tech-tree";
+```
+
+ClickHandler function used by Node internally.
+Use it when you are trying to build a custom `NodeElement` that you pass to a `Tree`.
+
+It will:
+
+- mark `Node` with class `active`
+- mark `Node's children` with class `next-active`
+
+```jsx
+//...
+
+function MyNodeElement({ name, id }) {
+  return (
+    <button id={id} onClick={nodeClickHandler}>
+      {name}
+    </button>
+  );
+}
+
+function ExampleComponent() {
+  return <Tree nodes={nodes} links={links} NodeElement={MyNodeElement} />;
+}
+```
+
+#### prepareSpritesheetStyle
+
+(to be added)
+
+#### simplePathMaker
+
+(to be added)
+
 ## Tips
 
 For further usage, go to the [examples page](https://github.com/ldd/react-tech-tree/tree/master/example/src/trees)
