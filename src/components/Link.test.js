@@ -8,7 +8,7 @@ describe("React Component [Link]", () => {
     const tree = component.toJSON();
     expect(tree).toMatchSnapshot();
   });
-  it("can create Link with className", () => {
+  it("can create Link with some props", () => {
     const className = "someClass";
     const someProp = "@value";
     const pathData = "M 0 0 L 0 0";

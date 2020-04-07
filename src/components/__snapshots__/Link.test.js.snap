@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`React Component [Link] can create Link with className 1`] = `
+exports[`React Component [Link] can create Link with some props 1`] = `
 <path
   className="someClass Link"
   d="M 0 0 L 0 0"
