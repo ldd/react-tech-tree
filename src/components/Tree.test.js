@@ -10,7 +10,7 @@ import { act } from "react-dom/test-utils";
 
 const getLinkId = ({ from = "", to = "" } = {}) => `${from}-${to}`;
 
-describe("Tree", () => {
+describe("React Component [Tree]", () => {
   const nodesData = [
     [
       { id: "A", name: "A" },

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tree can create empty Tree 1`] = `
+exports[`React Component [Tree] can create empty Tree 1`] = `
 <div
   className="Tree"
   id="tech-tree"
@@ -11,7 +11,7 @@ exports[`Tree can create empty Tree 1`] = `
 </div>
 `;
 
-exports[`Tree can create simple Tree 1`] = `
+exports[`React Component [Tree] can create simple Tree 1`] = `
 <div
   className="Tree"
   id="tech-tree"
@@ -46,7 +46,7 @@ exports[`Tree can create simple Tree 1`] = `
 </div>
 `;
 
-exports[`Tree can create simple Tree with custom NodeElement 1`] = `
+exports[`React Component [Tree] can create simple Tree with custom NodeElement 1`] = `
 <div
   className="Tree"
   id="tech-tree"
@@ -71,7 +71,7 @@ exports[`Tree can create simple Tree with custom NodeElement 1`] = `
 </div>
 `;
 
-exports[`Tree can create simple Tree with invalid node data 1`] = `
+exports[`React Component [Tree] can create simple Tree with invalid node data 1`] = `
 <div
   className="Tree"
   id="tech-tree"

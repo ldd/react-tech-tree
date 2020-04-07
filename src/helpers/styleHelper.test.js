@@ -1,6 +1,6 @@
 import { prepareSpritesheetStyle, DEFAULT_FRAME } from "./styleHelper";
 
-describe("[styleHelper]", () => {
+describe("helper [styleHelper]", () => {
   const someImage = "someImage";
 
   it("generates valid properties", () => {
