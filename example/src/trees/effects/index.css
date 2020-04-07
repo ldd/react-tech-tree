@@ -3,6 +3,7 @@
 }
 
 #effects-tree.Tree .Sprite {
+  transform: scale(3);
   image-rendering: pixelated;
   background-repeat: no-repeat;
   transform-origin: top left;
