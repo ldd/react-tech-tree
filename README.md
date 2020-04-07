@@ -41,12 +41,15 @@ import { Tree } from "react-tech-tree";
 import "react-tech-tree/dist/index.css";
 
 const nodes = [
-  [ {id: "A0", name: "A"}, {id:"B0", name: "B"} ]
+  [
+    { id: "A0", name: "A" },
+    { id: "B0", name: "B" }
+  ]
 ];
-const links = [ {from: "A0", to: "B0"} ];
+const links = [{ from: "A0", to: "B0" }];
 
-function Example {
-  return <Tree nodes={nodes} links={links}/>;
+function ExampleComponent() {
+  return <Tree nodes={nodes} links={links} />;
 }
 ```
 
