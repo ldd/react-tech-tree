@@ -10,7 +10,7 @@
 }
 
 #superhero-tree.Tree .Node {
-  border: none;
+  outline: none;
   background-color: transparent;
 }
 

@@ -1,7 +1,4 @@
 #text-tree.Tree .Node {
-  border-width: 3px;
-  z-index: 1;
-  outline: none;
   width: fit-content;
   height: fit-content;
   font-size: 20px;
