@@ -1,7 +1,7 @@
 .Node {
-  border: solid;
-  border-color: gray;
-  border-width: 1px;
+  outline: solid;
+  outline-color: gray;
+  outline-width: 2px;
   background-color: white;
   /* Nodes by default go over Links */
   z-index: 1;
