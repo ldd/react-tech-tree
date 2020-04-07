@@ -61,14 +61,20 @@ function ExampleComponent() {
 import { Tree } from "react-tech-tree";
 ```
 
-| Prop        | Type           | Description                                                                                                        |
-| ----------- | -------------- | ------------------------------------------------------------------------------------------------------------------ |
-| id          | `string`       | id property (should be unique). E.g: [uuuid](https://github.com/uuidjs/uuid)                                       |
-| links       | `object[]`     | object with links information                                                                                      |
-| nodes       | `object[]`     | object with nodes information                                                                                      |
-| NodeElement | ReactComponent | _(optional)_ React Element to be used as Node. Defaults to [`Node`](https://github.com/ldd/react-tech-tree/#node). |
-| nodeProps   | `object`       | _(optional)_ Properties to pass down to Node elements. See [`Node`](https://github.com/ldd/react-tech-tree/#node). |
-| linkProps   | `object`       | _(optional)_ Properties to pass down to Link elements. See [`Link`](https://github.com/ldd/react-tech-tree/#link). |
+| Prop        | Type                            | Description                                                                                                        |
+| ----------- | ------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| id          | `string`                        | id property (should be unique). E.g: [uuuid](https://github.com/uuidjs/uuid)                                       |
+| nodes       | `{id:string, name: string}[][]` | 2d array with nodes information                                                                                    |
+| links       | `{from:string, to: string}[]`   | array with links information                                                                                       |
+| NodeElement | `ReactElement`                  | _(optional)_ React Element to be used as Node. Defaults to [`Node`](https://github.com/ldd/react-tech-tree/#node). |
+| nodeProps   | `object`                        | _(optional)_ Properties to pass down to Node elements. See [`Node`](https://github.com/ldd/react-tech-tree/#node). |
+| linkProps   | `object`                        | _(optional)_ See below.                                                                                            |
+
+#### linkProps
+
+| Prop      | Type                                            | Description                                                                                                                              |
+| --------- | ----------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| pathMaker | `(r0: Rect,r1: Rect, props?: object) => string` | _(optional)_ Function to generate string paths. Defaults to [`simplePathMaker`](https://github.com/ldd/react-tech-tree/#simplePathMaker) |
 
 ### _Node_
 
@@ -76,9 +82,9 @@ import { Tree } from "react-tech-tree";
 import { Node } from "react-tech-tree";
 ```
 
-| Prop         | Type                      | Description                                  |
-| ------------ | ------------------------- | -------------------------------------------- |
-| clickHandler | (e: `MouseEvent`) => void | Event Handler fired when the Node is clicked |
+| Prop    | Type                      | Description                                                                                                                                                                |
+| ------- | ------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| onClick | `(e: MouseEvent) => void` | _(optional)_ Event Handler fired when the Node is clicked. Defaults to [`nodeClickHandler`](https://github.com/ldd/react-tech-tree/tree/document-helpers#nodeClickHandler) | styleName | () => `object` | function to style the Node from its name. [Example](https://github.com/ldd/react-tech-tree/blob/master/example/src/trees/superhero/index.js#L18) |
 
 ### _Sprite_
 
@@ -89,8 +95,17 @@ import { Sprite } from "react-tech-tree";
 | Prop      | Type           | Description                                                                                                                                        |
 | --------- | -------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- |
 | name      | `string`       | name of spritesheet entry or image name for this Sprite                                                                                            |
-| scale     | `number`       | sprite's scale                                                                                                                                     |
 | styleName | () => `object` | function to style the Sprite from its name. [Example](https://github.com/ldd/react-tech-tree/blob/master/example/src/trees/superhero/index.js#L18) |
+
+### _Link_
+
+```js
+import { Link } from "react-tech-tree";
+```
+
+| Prop     | Type     | Description                             |
+| -------- | -------- | --------------------------------------- |
+| pathData | `string` | data to build links. E.g: `M 0 0 L 1 1` |
 
 ### _helpers_
 
