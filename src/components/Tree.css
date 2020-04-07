@@ -9,11 +9,11 @@
 
 @keyframes activate {
   from {
-    border-color: gray;
+    outline-color: gray;
     stroke: gray;
   }
   to {
-    border-color: gold;
+    outline-color: gold;
     stroke: gold;
   }
 }

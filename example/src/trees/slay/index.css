@@ -8,7 +8,7 @@
 }
 
 #slay-tree.Tree .Node {
-  border: none;
+  outline: none;
   background-color: #898a7b;
 }
 
@@ -24,11 +24,11 @@
 
 @keyframes darkenStroke {
   from {
-    border-color: #706f65;
+    outline-color: #706f65;
     stroke: #706f65;
   }
   to {
-    border-color: #15202b;
+    outline-color: #15202b;
     stroke: #15202b;
   }
 }
