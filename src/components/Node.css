@@ -3,6 +3,8 @@
   border-color: gray;
   border-width: 1px;
   background-color: white;
+  /* Nodes by default go over Links */
+  z-index: 1;
 }
 .Node:hover {
   cursor: pointer;
