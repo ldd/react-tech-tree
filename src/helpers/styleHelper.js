@@ -1,5 +1,3 @@
-export const styleScale = scale => ({ transform: `scale(${scale})` });
-
 export const DEFAULT_FRAME = { w: 16, h: 16, x: 0, y: 0 };
 
 const frameStyle = ({ frame } = { frame: DEFAULT_FRAME }) => {
