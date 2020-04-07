@@ -126,7 +126,28 @@ function ExampleComponent() {
 
 #### prepareSpritesheetStyle
 
-(to be added)
+```js
+import { prepareSpritesheetStyle } from "react-tech-tree";
+```
+
+When using spritesheets, you may need to style each `Sprite` based on its name.
+
+If you are using [TexturePacker](https://www.codeandweb.com/texturepacker), you can use this function as follows:
+
+```jsx
+//...
+import spriteInformation from "./data/spritesheet.json";
+import spriteImage from "./data/spritesheet.png";
+//...
+
+const nodeProps = {
+  styleName: prepareSpritesheetStyle(spriteImage, spriteInformation)
+};
+
+function ExampleComponent() {
+  return <Tree nodes={nodes} links={links} nodeProps={nodeProps} />;
+}
+```
 
 #### simplePathMaker
 
