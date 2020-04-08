@@ -2,7 +2,7 @@ import React from "react";
 import { Sprite } from "./Sprite";
 import "./Node.css";
 
-const toggleChildren = (id = "", isActive) => {
+const toggleChildren = (id, isActive) => {
   // given a link A-N, we are interested in A's child, N
   const childNode = document.getElementById(id.split("-")[1]);
   if (!childNode) return;
