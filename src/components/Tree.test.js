@@ -4,7 +4,7 @@ import React from "react";
 import renderer from "react-test-renderer";
 import { Tree } from "./Tree";
 import ReactDOM from "react-dom";
-import { act } from "react-dom/test-utils";
+import { Simulate } from "react-dom/test-utils";
 
 // Enzyme.configure({ adapter: new Adapter() });
 
@@ -75,11 +75,8 @@ describe("React Component [Tree]", () => {
   });
   it("can render and activate Nodes", () => {
     ReactDOM.render(<Tree nodes={nodesData} links={links} />, container);
-    const domNodes = container.querySelectorAll(".Node");
-    const clickedNode = domNodes[0];
-    act(() => {
-      clickedNode.dispatchEvent(new MouseEvent("click", { bubbles: true }));
-    });
+    const clickedNode = container.querySelector(".Node");
+    Simulate.click(clickedNode);
     const activeNode = container.querySelector(".Node.active");
     expect(activeNode).toBeDefined();
     expect(activeNode).toEqual(expect.objectContaining({ id: clickedNode.id }));
@@ -91,14 +88,9 @@ describe("React Component [Tree]", () => {
   });
   it("can render and deactivate Nodes", () => {
     ReactDOM.render(<Tree nodes={nodesData} links={links} />, container);
-    const domNodes = container.querySelectorAll(".Node");
-    const clickedNode = domNodes[0];
-    act(() => {
-      clickedNode.dispatchEvent(new MouseEvent("click", { bubbles: true }));
-    });
-    act(() => {
-      clickedNode.dispatchEvent(new MouseEvent("click", { bubbles: true }));
-    });
+    const clickedNode = container.querySelector(".Node");
+    Simulate.click(clickedNode);
+    Simulate.click(clickedNode);
     const activeNode = container.querySelector(".Node.active");
     expect(activeNode).toBeNull();
 
@@ -108,11 +100,8 @@ describe("React Component [Tree]", () => {
   it("can render and ignore invalid Links", () => {
     const invalidLinks = [{ from: "A" }];
     ReactDOM.render(<Tree nodes={nodesData} links={invalidLinks} />, container);
-    const domNodes = container.querySelectorAll(".Node");
-    const clickedNode = domNodes[0];
-    act(() => {
-      clickedNode.dispatchEvent(new MouseEvent("click", { bubbles: true }));
-    });
+    const clickedNode = container.querySelector(".Node");
+    Simulate.click(clickedNode);
     const activeNode = container.querySelector(".Node.active");
     expect(activeNode).toBeDefined();
 
