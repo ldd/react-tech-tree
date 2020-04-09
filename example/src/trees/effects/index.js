@@ -1,11 +1,15 @@
 import React from "react";
-import { Tree, prepareSpritesheetStyle } from "react-tech-tree";
+import { Tree } from "react-tech-tree";
 import treeData from "./data/tree.json";
-import spriteInformation from "./data/spritesheet.json";
-import spriteImage from "./data/spritesheet.png";
 import "./index.css";
 
 const { nodes, links } = treeData;
+
+const styleName = name => ({
+  backgroundImage: `url(${process.env.PUBLIC_URL}/images/${name}.png)`,
+  width: 34,
+  height: 34
+});
 
 function EffectsTree() {
   return (
@@ -13,9 +17,7 @@ function EffectsTree() {
       id="effects-tree"
       nodes={nodes}
       links={links}
-      nodeProps={{
-        styleName: prepareSpritesheetStyle(spriteImage, spriteInformation)
-      }}
+      nodeProps={{ styleName }}
     />
   );
 }
