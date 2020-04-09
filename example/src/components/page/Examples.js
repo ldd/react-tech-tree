@@ -10,7 +10,7 @@ import SlayTree from "../../trees/slay";
 const types = ["Simple", "Themed", "Enhaced"];
 const choiceDic = {
   text: { label: "Text", key: "text", type: "Simple", Tree: TextTree },
-  effects: { label: "Pixelated Effects", key: "effects", type: "Simple", Tree: EffectsTree }, // prettier-ignore
+  effects: { label: "Image", key: "effects", type: "Simple", Tree: EffectsTree }, // prettier-ignore
   superhero: { label: "X-Men", key: "superhero", type: "Themed", Tree: SuperheroTree }, // prettier-ignore
   slay: { label: "Slay The Spire", key: "slay", type: "Themed", Tree: SlayTree }, // prettier-ignore
   text_tooltip: { label: "Text Tooltip", key: "text_tooltip", type: "Enhaced", Tree: TextTooltipTree } // prettier-ignore
