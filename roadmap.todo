@@ -1,0 +1,46 @@
+Roadmap:
+
+  Doing:
+
+  Todo:
+    ☐ add new tree: chess-like similar to FF12 skill tree
+
+  Done:
+    ✔ cleanup Tree.js @done(20-04-09 11:30)
+    ✔ add clickable nodes @done(20-04-09 11:33)
+      ✔ toggle links from clicked node @done(20-04-09 11:32)
+      ✔ animate link transition @done(20-04-09 11:30)
+      ✔ cleanup @done(20-04-09 11:30)
+    ✔ create actual library @done(20-04-09 11:30)
+    ✔ style links a little bit better @done(20-04-09 11:30)
+    ✔ enable bezier-curve links @done(20-04-09 11:30)
+    ✔ reposition links when resizing window @done(20-04-09 11:30)
+    ✔ improve links
+      ✔ use css classes @done(20-04-09 11:30)
+      ✔ fix up parent-child red links @done(20-04-09 11:30)
+    ✔ expose things better
+      ✔ expose how svg paths are made @done(20-04-09 11:30)
+      ✔ expose inner components @done(20-04-09 11:30)
+      ✔ expose util functions @done(20-04-09 11:30)
+    ✔ create actual website @done(20-04-09 11:30)
+    ✔ fix website mobile @done(20-04-09 11:30)
+    ✔ cleanup @done(20-04-09 11:30)
+    ✔ fix simplest tests @done(20-04-09 11:30)
+    ✔ create project readme @done(20-04-09 11:30)
+    ✔ create website home @done(20-04-09 11:30)
+    ✔ add more `tree` examples @done(20-04-09 11:30)
+      ✔ add text-only tree @done(20-04-09 11:30)
+      ✔ add slay-the-spire tree @done(20-04-09 11:30)
+    ✔ add proper comments to code, final refactor @done(20-04-09 11:30)
+    ✔ add tests @done(20-04-09 11:30)
+    ✔ add 100% test coverage @done(20-04-09 11:30)
+    ✔ split simplest router into its own package (to be used later too) @done(20-04-09 11:30)
+    ✔ scale should be part of stylying and not badly added @done(20-04-09 11:30)
+    ✔ use new effects assets @done(20-04-09 11:30) @low
+    ✔ use next-node in base library @done(20-04-09 11:30)
+      ✔ reverse links in slay the spire example @done(20-04-09 11:30)
+    ✔ document helpers @done(20-04-09 11:30)
+
+  Dropped:
+    ✘ Press Alt+C to mark a todo as cancelled @cancelled(20-04-09 11:36)
+  
