@@ -1,6 +1,6 @@
 {
   "name": "react-tech-tree",
-  "version": "0.7.0",
+  "version": "0.8.5",
   "description": "React tech tree component",
   "author": "ldd",
   "license": "MIT",
@@ -14,7 +14,6 @@
   "scripts": {
     "build": "microbundle-crl --format modern,cjs",
     "start": "microbundle-crl watch --no-compress --format modern,cjs",
-    "prepublish": "run-s build",
     "test": "run-s test:unit test:lint test:build",
     "test:build": "run-s build",
     "test:lint": "eslint .",
